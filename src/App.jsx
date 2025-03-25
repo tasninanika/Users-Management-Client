@@ -13,6 +13,11 @@ function App() {
 
   const handleAddUser = (e) => {
     e.preventDefault();
+    const form = e.target;
+    const name = form.name.value;
+    const email = form.email.value;
+
+    console.log(name, email);
   };
 
   return (
