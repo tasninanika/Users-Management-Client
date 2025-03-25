@@ -4,15 +4,28 @@ import { useEffect } from "react";
 
 function App() {
   const [users, setUsers] = useState([]);
+
   useEffect(() => {
     fetch("http://localhost:5000/users")
       .then((res) => res.json())
       .then((data) => setUsers(data));
   }, []);
+
+  const handleAddUser = (e) => {
+    e.preventDefault();
+  };
+
   return (
     <>
       <h1>Users Management System</h1>
       <p>Number of users: {users.length}</p>
+      <form onSubmit={handleAddUser}>
+        <input type="text" name="name" />
+        <br />
+        <input type="email" name="email" />
+        <br />
+        <input type="submit" value="Add User" />
+      </form>
       {users.map((user) => (
         <p key={user.id}>
           {user.id}. {user.name}: {user.email}
