@@ -12,6 +12,7 @@ function App() {
   return (
     <>
       <h1>Users Management System</h1>
+      <p>Number of users: {users.length}</p>
     </>
   );
 }
