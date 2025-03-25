@@ -13,11 +13,11 @@ function App() {
     <>
       <h1>Users Management System</h1>
       <p>Number of users: {users.length}</p>
-      {users.map((user) => {
-        <p>
-          {user.id} {user.name} {user.email}
-        </p>;
-      })}
+      {users.map((user) => (
+        <p key={user.id}>
+          {user.id}. {user.name}: {user.email}
+        </p>
+      ))}
     </>
   );
 }
